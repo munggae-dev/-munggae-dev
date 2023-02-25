@@ -2,7 +2,7 @@
 	<v-app>
 		<AppBar></AppBar>
 		<v-main id="main">
-			<v-container style="padding: 0">
+			<v-container style="padding: 0" fill-height fluid>
 				<router-view />
 			</v-container>
 		</v-main>
