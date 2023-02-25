@@ -1,13 +1,19 @@
 <template>
-  <div class="about">
-    <h1>This is an Skill page</h1>
-  </div>
+	<v-container fill-height fluid>
+		<v-row align="center" justify="center">
+			<v-col>
+				<MainSkill></MainSkill>
+			</v-col>
+		</v-row>
+	</v-container>
 </template>
 
 <script>
-export default {
-  name: "SkillView",
+	import MainSkill from "@/components/skill/MainSkill.vue";
 
-  components: {},
-};
+	export default {
+		name: "SkillView",
+
+		components: { MainSkill },
+	};
 </script>
