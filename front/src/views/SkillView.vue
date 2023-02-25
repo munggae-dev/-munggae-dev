@@ -2,7 +2,8 @@
 	<v-container fill-height fluid>
 		<v-row align="center" justify="center">
 			<v-col>
-				<MainSkill></MainSkill>
+				<MainSkill v-if="cardFlag" @btn="cardFlag = false"></MainSkill>
+				<ExperianceSkill v-else @btn="cardFlag = true"></ExperianceSkill>
 			</v-col>
 		</v-row>
 	</v-container>
@@ -10,10 +11,14 @@
 
 <script>
 	import MainSkill from "@/components/skill/MainSkill.vue";
+	import ExperianceSkill from "@/components/skill/ExperianceSkill.vue";
 
 	export default {
 		name: "SkillView",
 
-		components: { MainSkill },
+		components: { MainSkill, ExperianceSkill },
+		data: () => ({
+			cardFlag: true,
+		}),
 	};
 </script>
