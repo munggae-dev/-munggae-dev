@@ -7,6 +7,7 @@ export default new Vuex.Store({
 	state: {
 		tab: 0,
 		headerShow: true,
+		backgroundColor: "#fff",
 	},
 	getters: {
 		getTab: (state) => {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
 		getHeaderShow: (state) => {
 			return state.headerShow;
 		},
+		getBackgroundColor: (state) => {
+			return state.backgroundColor;
+		},
 	},
 	mutations: {
 		setTab: (state, tab) => {
@@ -22,6 +26,9 @@ export default new Vuex.Store({
 		},
 		setHeaderShow(state, headerShow) {
 			state.headerShow = headerShow;
+		},
+		setBackgroundColor(state, backgroundColor) {
+			state.backgroundColor = backgroundColor;
 		},
 	},
 	actions: {},

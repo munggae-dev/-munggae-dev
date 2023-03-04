@@ -6,10 +6,14 @@
 		justify="start"
 		@click="$emit('click')">
 		<v-col cols="2">
-			<h3>- {{ skill.name }}</h3>
+			<h3 :style="`color : ${skill.color}`">- {{ skill.name }}</h3>
 		</v-col>
 		<v-col>
-			<v-progress-linear :value="skill.score" height="25" rounded>
+			<v-progress-linear
+				:value="skill.score"
+				height="25"
+				rounded
+				:color="skill.color">
 				<!-- eslint-disable-next-line -->
 				<template v-slot:default="{ value }">
 					<strong class="cwhite">{{ Math.ceil(skill.score) }}%</strong>

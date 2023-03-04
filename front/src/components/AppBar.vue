@@ -1,7 +1,7 @@
 <template>
 	<v-app-bar app color="primary" dark>
 		<v-tabs
-			v-model="getTab"
+			v-model="tab"
 			fixed-tabs
 			:background-color="colors[getTab] + ' darken-4'"
 			dark>
@@ -21,13 +21,19 @@
 		name: "AppBar",
 		data: () => ({
 			colors: ["navy", "green", "purple", "black", "blue"],
+			backgroundColor: ["navy", "darkgreen", "purple", "black", "darkblue"],
+			tab: 0,
 		}),
+		mounted() {
+			this.setTab(this.getTab);
+		},
 		computed: {
 			...mapGetters(["getTab"]),
 		},
 		methods: {
-			...mapMutations(["setTab"]),
+			...mapMutations(["setTab", "setBackgroundColor"]),
 			go(tag, index) {
+				// this.setBackgroundColor(this.backgroundColor[index]);
 				this.setTab(index);
 				this.$router.replace({ name: tag });
 			},
